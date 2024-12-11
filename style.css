@@ -1,0 +1,32 @@
+body{
+    background-color: rgb(191, 182, 171);
+}
+
+nav {
+    display: flex;
+    justify-content: center; /* Ortalar */
+    padding: 10px; /* Menüye dış boşluk ekler */
+    font-size: 20px;
+
+    margin: 30px;
+    background-color: rgb(62, 104, 140);
+    border-radius: 5px;
+    color: antiquewhite;
+
+
+  }
+  
+  nav a {
+    margin-right: 30px; /* Öğeler arasına boşluk ekler */
+    text-decoration: none; /* Alt çizgiyi kaldırır */
+    color: black;
+    transition: all 0.3s ease;
+  }
+  
+  nav a:last-child {
+    margin-right: 0; /* Son öğe için boşluğu sıfırlar */
+  }
+nav a:hover{
+    text-decoration: underline;
+    color: rgb(233, 199, 199);
+}
