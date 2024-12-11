@@ -115,3 +115,6 @@
     width: unset;
   }
 }
+.fa-bars , .fa-xmark{
+  font-size: 30px;
+}
