@@ -1,3 +1,8 @@
+
+.title{
+    color: aliceblue;
+    background-color: black;
+
  *{
   margin: 0;
   padding: 0;
@@ -114,4 +119,8 @@
     left: 2rem;
     width: unset;
   }
+}
+.fa-bars , .fa-xmark{
+  font-size: 30px;
+  color: rgb(255, 223, 182);
 }

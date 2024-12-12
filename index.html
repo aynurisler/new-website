@@ -9,6 +9,12 @@
     <!-- <script src="app.js"></script> -->
 </head>
 <body>
+
+
+   <h class="title">burada önceden hello world yazıyodu ama değişti</h>
+   <h class="title">burada önceden hello world yazıyodu ama değişti</h><h class="title">burada önceden hello world yazıyodu ama değişti</h><h class="title">burada önceden hello world yazıyodu ama değişti</h><h class="title">burada önceden hello world yazıyodu ama değişti</h><h class="title">burada önceden hello world yazıyodu ama değişti</h><h class="title">burada önceden hello world yazıyodu ama değişti</h><h class="title">burada önceden hello world yazıyodu ama değişti</h><h class="title">burada önceden hello world yazıyodu ama değişti</h>
+
+
     <header>
         <div class="navbar">
             <div class="logo"> <a href="#" class="icon">M❤️A</a></div>
@@ -36,13 +42,27 @@ const toggleBtnIcon = document.querySelector('.toggle-btn i')
 const dropDownMenu = document.querySelector('.dropdown-menu')
 
 toggleBtn.onclick = function(){
+    event.stopPropagation();
     dropDownMenu.classList.toggle('open')
     const isOpen = dropDownMenu.classList.contains('open')
 
-    toggleBtnIcon.classList = isOpen
-     ? 'fa-solid fa-xmark'
-     : 'fa-solid fa-bars'
+   
+    if (isOpen) {
+    toggleBtnIcon.classList.remove('fa-bars');
+    toggleBtnIcon.classList.add('fa-xmark');
+} else {
+    toggleBtnIcon.classList.remove('fa-xmark');
+    toggleBtnIcon.classList.add('fa-bars');
 }
+
+}
+   document.addEventListener("click", (e)=>{
+    if (!dropDownMenu.contains(e.target)&& !toggleBtn.contains(e.target)) {
+        dropDownMenu.classList.remove("open");
+        toggleBtnIcon.classList = 'fa-solid fa-bars';
+    }
+   })
     </script>
+
 </body>
 </html>
