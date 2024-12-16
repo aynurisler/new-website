@@ -9,6 +9,12 @@
   box-sizing: border-box;
   font-family:cursive;
  } */
+ html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Yatay taşmayı engeller */
+}
+
  body{
   height: 100vh;
   background-image: url(img/galaxi.jpg);
@@ -124,6 +130,7 @@
     left: 2rem;
     width: unset;
   }
+  
 }
 .fa-bars , .fa-xmark{
   font-size: 30px;
@@ -282,4 +289,72 @@ section{
   width: 36px;
   background-color: #d5dfd5;
   border-radius: 14px;
+}
+h2{
+  color: white;
+  text-align: center;
+  font-family:cursive;
+  font-size: 30px;
+}
+
+.horoscope a {
+  border-bottom: none; /* Eğer alt çizgi border olarak eklenmişse kaldırır */
+  font-size: 20px;
+  margin: 10px; /* Her bir bağlantının etrafına boşluk ekler */
+  display: inline-block; /* Blok haline getirip margin çalıştırır */
+}
+.horoscope {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Dinamik sütun genişliği */
+  gap: 30px; /* Resimler arasında boşluk */
+  padding-right: 20px;
+}
+
+.horoscope a img {
+  width: 200%; /* Resmi alanın genişliğine uydur */
+  height: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Yumuşak geçiş efekti */
+
+}
+.horoscope a img:hover {
+  transform: scale(1.1); /* Resmi %10 büyütür */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Hafif bir gölge efekti ekler */
+}
+p {
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  font-family: 'Courier New', Courier, monospace;
+  border-right: 2px solid white; /* Klavye imlecini temsil eden çizgi */
+  white-space: nowrap; /* Yazı sadece tek satırda görünür */
+  overflow: hidden; /* Taşan kısmı gizler */
+  animation: typing 4s steps(40, end) forwards, blinking 0.8s infinite;
+  display: inline-block; /* İçeriğe göre genişliği ayarlar */
+}
+
+/* Responsive tasarım: Küçük ekranlar için */
+@media (max-width: 768px) {
+  p {
+    font-size: 12px; /* Mobilde daha küçük yazı boyutu */
+    padding: 10px;
+    border-right: 1px solid white; /* Daha ince imleç */
+  }
+}
+
+/* Yazma animasyonu */
+@keyframes typing {
+  from {
+    width: 0; /* Yazı görünmez başlar */
+  }
+  to {
+    width: 77ch; /* Yazının görünmesini istediğiniz karakter uzunluğu kadar ilerler */
+
+  }
+}
+
+/* İmleç yanıp sönme animasyonu */
+@keyframes blinking {
+  50% {
+    border-color: transparent; /* Göz kırpma efekti */
+  }
 }
